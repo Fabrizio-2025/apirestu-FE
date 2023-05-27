@@ -1,0 +1,27 @@
+<form class="flex flex-column gap-2">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Username</mat-label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" matInput placeholder="Username"
+      [value]="username" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="text" id="email" name="email" [(ngModel)]="email" matInput placeholder="Email" [value]="email" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" matInput placeholder="Password"
+      [value]="password" />
+  </mat-form-field>
+
+  <div class="flex gap-3 justify-content-center">
+    <button (click)="confirm()"
+      style="background-color:rgb(26, 46, 224); border: none; border-radius: 4px; cursor: pointer; padding: 10px 20px; margin: 40px;color: white;">Confirm</button>
+    <button (click)="cancel()"
+      style="background-color: rgb(255, 0, 0); border: none; border-radius: 4px; cursor: pointer; padding: 10px 20px; margin: 40px ; color: white;">Cancel</button>
+  </div>
+
+</form>
