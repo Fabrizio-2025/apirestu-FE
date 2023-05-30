@@ -16,7 +16,7 @@ export class CrudDialogComponent {
   // Inputs
   username!: "" | string;
   email!: "" | string;
-  password!: " " | string;
+  password!: "" | string;
 
   // InputForPerson if Person is not defined.
   id!: number;
@@ -26,7 +26,7 @@ export class CrudDialogComponent {
   ) {
     if (user != undefined) {
       console.log(user);
-      this.id = user.id;
+      this.id = user.userId;
       this.username = user.username;
       this.email = user.email;
       this.password = user.password;
@@ -45,11 +45,8 @@ export class CrudDialogComponent {
         this.done.emit(res);
       })
     } else {
+      console.log(this.user);
       this.UserService.putPerson(this.id, new User(this.id, this.username, this.email, this.password)).subscribe((res: any) => {
-        this.id = 0;
-        this.username = "";
-        this.email = "";
-        this.password = "";
         this.done.emit(res);
       });
     }

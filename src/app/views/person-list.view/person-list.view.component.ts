@@ -42,12 +42,12 @@ export class PersonListViewComponent {
     dialogRef.componentInstance.done.subscribe((res: any) => {
 
       console.log('Event received:', res);
-      
+
       this.getAllPersons();
       dialogRef.close();
     });
 
-    // If event cancel is received
+
     dialogRef.componentInstance.close.subscribe(() => {
       dialogRef.close();
     });
